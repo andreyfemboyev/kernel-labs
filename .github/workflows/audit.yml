@@ -1,0 +1,22 @@
+name: Dependency audit
+on:
+  pull_request:
+  workflow_dispatch:
+  schedule:
+    - cron: '31 5 * * 1'
+permissions:
+  contents: read
+jobs:
+  audit:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: cargo install cargo-audit --locked
+      - run: cargo audit
+      - run: cargo audit --file apps/desktop/src-tauri/Cargo.lock
+      - run: npm audit --audit-level=high
+        working-directory: apps/desktop

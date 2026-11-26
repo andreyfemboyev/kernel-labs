@@ -1,0 +1,11 @@
+[package]
+name = "klab-devicetree"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+klab-core = { path = "../klab-core" }
+serde.workspace = true
+hex = "0.4"
+tempfile = "3"

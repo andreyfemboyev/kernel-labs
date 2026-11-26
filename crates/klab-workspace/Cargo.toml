@@ -1,0 +1,11 @@
+[package]
+name = "klab-workspace"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+klab-core = { path = "../klab-core" }
+serde.workspace = true
+serde_json.workspace = true
+rusqlite = { version = "0.37", features = ["bundled"] }

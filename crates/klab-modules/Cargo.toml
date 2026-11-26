@@ -1,0 +1,12 @@
+[package]
+name = "klab-modules"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+klab-core = { path = "../klab-core" }
+serde.workspace = true
+klab-elf = { path = "../klab-elf" }
+klab-abi = { path = "../klab-abi" }
+serde_json.workspace = true

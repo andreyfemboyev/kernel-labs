@@ -1,0 +1,31 @@
+[package]
+name = "klab"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+clap = { version = "4", features = ["derive"] }
+clap_complete = "4"
+serde_json.workspace = true
+tokio.workspace = true
+tracing = "0.1"
+tracing-subscriber = "0.3"
+klab-abi = { path = "../../crates/klab-abi" }
+klab-bootimg = { path = "../../crates/klab-bootimg" }
+klab-build = { path = "../../crates/klab-build" }
+klab-core = { path = "../../crates/klab-core" }
+klab-device = { path = "../../crates/klab-device" }
+klab-devicetree = { path = "../../crates/klab-devicetree" }
+klab-diagnostics = { path = "../../crates/klab-diagnostics" }
+klab-elf = { path = "../../crates/klab-elf" }
+klab-emulator = { path = "../../crates/klab-emulator" }
+klab-git = { path = "../../crates/klab-git" }
+klab-kconfig = { path = "../../crates/klab-kconfig" }
+klab-modules = { path = "../../crates/klab-modules" }
+klab-sdk = { path = "../../crates/klab-sdk" }
+klab-toolchain = { path = "../../crates/klab-toolchain" }
+klab-workspace = { path = "../../crates/klab-workspace" }
+
+[dev-dependencies]
+tempfile = "3"

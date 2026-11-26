@@ -1,0 +1,8 @@
+/target/
+**/target/
+**/node_modules/
+**/dist/
+**/.klab.sqlite3*
+/out/
+*.log
+/apps/desktop/src-tauri/gen/

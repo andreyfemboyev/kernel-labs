@@ -1,0 +1,5 @@
+mainmenu "Synthetic KERNEL//LAB fixture"
+
+config FIXTURE
+	bool "Fixture symbol"
+	default y

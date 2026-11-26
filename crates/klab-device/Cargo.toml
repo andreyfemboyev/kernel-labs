@@ -1,0 +1,8 @@
+[package]
+name = "klab-device"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+klab-core = { path = "../klab-core" }

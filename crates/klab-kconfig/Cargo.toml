@@ -1,0 +1,10 @@
+[package]
+name = "klab-kconfig"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+klab-core = { path = "../klab-core" }
+serde.workspace = true
+tempfile = "3"

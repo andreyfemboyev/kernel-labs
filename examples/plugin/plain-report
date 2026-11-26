@@ -1,0 +1,5 @@
+#!/bin/sh
+set -eu
+[ "$#" -eq 2 ] && [ "$1" = export-v1 ] || exit 2
+printf 'KERNEL//LAB report\n'
+/bin/cat -- "$2"

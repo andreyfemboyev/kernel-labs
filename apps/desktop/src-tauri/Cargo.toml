@@ -1,0 +1,26 @@
+[package]
+name = "kernel-lab-desktop"
+version = "0.1.0-alpha"
+edition = "2024"
+license = "MIT"
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+tauri = { version = "2", features = [] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+klab-core = { path = "../../../crates/klab-core" }
+klab-workspace = { path = "../../../crates/klab-workspace" }
+klab-kconfig = { path = "../../../crates/klab-kconfig" }
+klab-devicetree = { path = "../../../crates/klab-devicetree" }
+klab-elf = { path = "../../../crates/klab-elf" }
+klab-modules = { path = "../../../crates/klab-modules" }
+klab-abi = { path = "../../../crates/klab-abi" }
+klab-bootimg = { path = "../../../crates/klab-bootimg" }
+klab-diagnostics = { path = "../../../crates/klab-diagnostics" }
+klab-emulator = { path = "../../../crates/klab-emulator" }
+klab-git = { path = "../../../crates/klab-git" }
+klab-build = { path = "../../../crates/klab-build" }
+tokio = { version = "1", features = ["sync", "rt"] }

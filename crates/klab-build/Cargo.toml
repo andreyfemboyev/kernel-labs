@@ -1,0 +1,17 @@
+[package]
+name = "klab-build"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+klab-core = { path = "../klab-core" }
+serde.workspace = true
+klab-workspace = { path = "../klab-workspace" }
+tokio.workspace = true
+regex = "1"
+[target.'cfg(unix)'.dependencies]
+nix = { version = "0.30", features = ["signal", "process"] }
+
+[dev-dependencies]
+tempfile = "3"
