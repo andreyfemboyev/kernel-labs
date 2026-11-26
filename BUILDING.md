@@ -6,7 +6,7 @@ Run the CLI inside your Linux distro on Windows with WSL2 and keep working trees
 
 ## Desktop
 
-The Linux x86_64 Debian build requires GTK 3 and WebKitGTK 4.1. Run `apt install ./kernel-lab-desktop-linux-x86_64.deb` on Debian 13 with administrator privileges, then launch KERNEL LAB from the application menu. The local package uses the debug Rust profile with the production frontend embedded.
+The Linux x86_64 Debian build requires GTK 3 and WebKitGTK 4.1. Run `apt install ./kernel-lab-desktop-linux-x86_64.deb` on Debian 13 with administrator privileges, then launch KERNEL LAB from the application menu. The local desktop builds use the debug Rust profile with the production frontend embedded. The AppImage was smoke-tested on Debian 13 with the host's GLES library (`libgles2`). Where FUSE is unavailable, use `APPIMAGE_EXTRACT_AND_RUN=1 ./kernel-lab-desktop-linux-x86_64.AppImage`. If the WebKit DMA-BUF renderer fails on a virtual display, run with `WEBKIT_DISABLE_DMABUF_RENDERER=1`.
 
 
 On Debian or Ubuntu install the Tauri prerequisites, including `libwebkit2gtk-4.1-dev`, `libgtk-3-dev`, `libayatana-appindicator3-dev`, `librsvg2-dev`, `pkg-config`, and a C compiler. On Windows use the MSVC Rust toolchain, Visual Studio C++ Build Tools and WebView2. Install Node.js 22.13 or newer on a supported LTS release.

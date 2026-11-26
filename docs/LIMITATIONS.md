@@ -13,4 +13,4 @@
 | Devices and emulation | ADB discovery and diagnostics, Fastboot discovery, QEMU ARM64 invocation | External device and emulator operations require integration verification. No flashing. |
 | Git and SDK | Status, diff, log, patch check/apply, clone and protocol-1 export plugins | Patch series, branch operations and additional plugin types pending. |
 | Desktop | Tauri IPC, build plan approval and streaming logs, artifact reports, Monaco scratch buffer, command palette, themes, English/Russian UI labels | Native Linux workspace and build paths were exercised through WebKitGTK. Editor persistence, integrated terminal, and specialized studio panels remain pending. |
-| Packaging | Linux x86_64 CLI, Debian desktop package, source distribution, and packaging workflows | Windows and ARM64 still require execution on a suitable host. |
+| Packaging | Linux x86_64 CLI, Debian desktop package, AppImage, source distribution, and packaging workflows | Linux x86_64 builds were tested on Debian 13. Windows and ARM64 still require execution on a suitable host. |
