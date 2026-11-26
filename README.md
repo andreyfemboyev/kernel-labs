@@ -2,6 +2,22 @@
 
 **Build beneath Android.** An offline-first engineering workbench for Android and Linux kernel source trees and artifacts.
 
+[![CI](https://github.com/andreyfemboyev/kernel-labs/actions/workflows/ci.yml/badge.svg)](https://github.com/andreyfemboyev/kernel-labs/actions/workflows/ci.yml) [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+
+[Releases](https://github.com/andreyfemboyev/kernel-labs/releases) · [Architecture](ARCHITECTURE.md) · [Verification](docs/VERIFICATION.md) · [Portfolio](https://andreyfemboyev.github.io/portfolio/#kernel-labs)
+
+## What you can do
+
+- Inspect local kernel trees, build profiles, toolchains and SQLite build history.
+- Preview and approve build invocations; stream logs and record artifact checksums.
+- Inspect ELF, DTB, Kconfig, kernel modules, ABI metadata and boot images.
+- Analyze panic logs with heuristics and optional external tools.
+- Use a Tauri desktop workbench or the standalone Rust CLI.
+
+**Alpha scope:** the native synthetic Kbuild fixture is verified; full Android builds, live-device operations and additional desktop targets need integration testing. No flashing.
+
+## Quick start
+
 `v0.1.0-alpha` includes a standalone Rust CLI and a Tauri 2 desktop source tree. Start with [Building](BUILDING.md), the [compatibility matrix](docs/LIMITATIONS.md), and the [build adapter guide](docs/BUILD_ADAPTERS.md).
 
 ```sh

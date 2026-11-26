@@ -3,6 +3,10 @@ on:
   workflow_dispatch:
   push:
     tags: ['v*']
+    branches: [main]
+    paths:
+      - 'docs/RELEASE-v0.1.0-alpha.md'
+      - '.github/workflows/package.yml'
 permissions:
   contents: read
 jobs:
@@ -62,12 +66,13 @@ jobs:
           path: release-candidate/
           if-no-files-found: error
   draft-release:
-    if: startsWith(github.ref, 'refs/tags/v')
+    if: startsWith(github.ref, 'refs/tags/v') || (github.ref == 'refs/heads/main' && github.event_name == 'push')
     needs: package
     runs-on: ubuntu-24.04
     permissions:
       contents: write
     steps:
+      - uses: actions/checkout@v4
       - uses: actions/download-artifact@v4
         with:
           pattern: release-candidate-*
@@ -84,5 +89,19 @@ jobs:
       - name: Stage a draft for review
         env:
           GH_TOKEN: ${{ github.token }}
-          TAG: ${{ github.ref_name }}
-        run: gh release create "$TAG" --repo "$GITHUB_REPOSITORY" --verify-tag --draft --prerelease --generate-notes release/*
+        run: |
+          set -euo pipefail
+          if [[ "$GITHUB_REF" == refs/tags/* ]]; then
+            TAG="$GITHUB_REF_NAME"
+            if [[ "$TAG" != v0.1.0-alpha ]]; then
+              gh release create "$TAG" --repo "$GITHUB_REPOSITORY" --verify-tag --draft --prerelease --generate-notes release/*
+              exit 0
+            fi
+          else
+            TAG=v0.1.0-alpha
+          fi
+          if gh release view "$TAG" --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
+            echo "Release already exists; refusing to replace its assets automatically."
+            exit 1
+          fi
+          gh release create "$TAG" --repo "$GITHUB_REPOSITORY" --target "$GITHUB_SHA" --draft --prerelease --title "KERNEL//LAB $TAG" --notes-file docs/RELEASE-v0.1.0-alpha.md release/*

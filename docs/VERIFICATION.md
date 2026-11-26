@@ -17,4 +17,4 @@ Checks ran on Debian 13 x86_64 with Rust 1.100.0 and Node.js 24.22.3.
 | Debian package | Built and inspected with dpkg-deb. The extracted executable opened a native window. |
 | AppImage | Built and exercised in extract-and-run mode. The virtual display used software-compatible WebKit settings and a host GLES library. |
 
-The Kbuild-style fixture is a synthetic source tree compiled by a real compiler. A full Android kernel build, ARM64 and Windows packaging, and live device operations were outside the verified test matrix. The GitHub workflows were prepared locally and have yet to run on hosted runners.
+The Kbuild-style fixture is a synthetic source tree compiled by a real compiler. A full Android kernel build, ARM64 and Windows packaging, and live device operations were outside the verified test matrix. Hosted [CI run 45813087483](https://github.com/andreyfemboyev/kernel-labs/actions/runs/45813087483) subsequently passed all four jobs (Linux x86-64, Linux ARM64, Windows Rust, and frontend). This is not a desktop packaging or device smoke test.
